@@ -6,7 +6,7 @@ var express = require("express"),
 app.use(express.static(__dirname + '/Client'));
 app.use(express.static(__dirname + '/Views'));
 
-exports.db = mongoose.createConnection('mongodb://heroku_scdnj73g:smart0415@ds159856.mlab.com:59856/heroku_scdnj73g');
+exports.db = mongoose.createConnection('mongodb://heroku_z1s5s1h5:smart0415@ds159856.mlab.com:59856/heroku_z1s5s1h5');
 exports.autoIncrement = require('mongoose-auto-increment');
 exports.autoIncrement.initialize(exports.db);
 require("./Models/model.js");
