@@ -1,0 +1,53 @@
+<div class="container custom-container">
+  <section>
+      <div class="card custom-card border border-secondary">
+        <div class="card-body">
+          <h4 class="card-title" style="text-align:center;color: #070c42; opacity: 0.8;">Register Employee</h4>
+          <form style="margin:20px" ng-submit="doRegister()">
+            <div class="row">
+              <div class="col col-md-5">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="id" ng-model="data.employee_id" required placeholder="Employee ID">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="firstName" ng-model="data.employee_first_name" required placeholder="First Name">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="lastName" ng-model="data.employee_last_name" required placeholder="Last Name">
+                </div>
+              </div>
+              <div class="col col-md-2"></div>
+              <div class="col col-md-5">
+                <div class="form-group" style="margin-bottom:6%;">
+                  <span style="margin-right:2%; color:white">Gender</span>
+                  <label class="custom-control custom-radio">
+                    <input type="radio" name="gender" class="custom-control-input" id="gender-male" ng-model="data.employee_gender" value="male">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Male</span>
+                  </label>
+                  <label class="custom-control custom-radio">
+                    <input type="radio" name="gender" class="custom-control-input" id="gender-female" ng-model="data.employee_gender" value="female">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Female</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" ng-model="data.employee_email" placeholder="Email ID">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="phnNumber" ng-model="data.employee_phn_number" placeholder="Mobile Number">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-md-5"></div>
+              <div class="col col-md-2">
+                <input type="submit" class="btn btn-default btn-block"/>
+              </div>
+              <div class="col col-md-5"></div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </section>
+</div>

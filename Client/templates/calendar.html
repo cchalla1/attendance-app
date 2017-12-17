@@ -1,0 +1,65 @@
+<div class="container" style="padding-top:10%;">
+  <section>
+    <div class="row">
+      <div class="col col-md-4">
+        <div class="row">
+          <div class="col col-md-8 form-group">
+            <input type="text" class="form-control" id="search" data-ng-model="employee.employee_id" placeholder="Search" list="employeesList">
+          </div>
+          <div class="col col-md-4"><button class="btn btn-default" ng-click="fetchCalendar()">Go</button></div>
+        </div>
+        <datalist id="employeesList">
+          <option data-ng-repeat="emp in employees" value="{{emp.employee_id + ' ('+emp.employee_first_name+' '+emp.employee_last_name + ')'}}">
+        </datalist>
+      </div>
+      <div class="col col-md-8" height="70%">
+        <div class="row" style="margin-bottom:5%;">
+          <div class="col col-md-4 btn-group" style="vertical-align: top;">
+            <button
+              class="btn btn-primary"
+              mwl-date-modifier
+              date="data.today"
+              decrement="data.view"
+              ng-click="fetchCalendar()">
+              Previous
+            </button>
+            <button
+              class="btn btn-default"
+              mwl-date-modifier
+              date="data.today"
+              set-to-today
+              ng-click="fetchCalendar()">
+              Today
+            </button>
+            <button
+              class="btn btn-primary"
+              mwl-date-modifier
+              date="data.today"
+              increment="data.view"
+              ng-click="fetchCalendar()">
+              Next
+            </button>
+          </div>
+          <div class="col col-md-4" style="text-align:center;">{{data.title}}</div>
+          <div class="col col-md-4 btn-group">
+            <button class="btn btn-primary" style="float:right" ng-model="data.view" uib-btn-radio="'year'" ng-click="fetchCalendar('year')">Year</button>
+            <button class="btn btn-primary" style="float:right" ng-model="data.view" uib-btn-radio="'month'" ng-click="fetchCalendar('month')">Month</button>
+            <!-- <button class="btn btn-primary" ng-model="data.view" uib-btn-radio="'week'" ng-click="data.view='week'">Week</button> -->
+            <!-- <button class="btn btn-primary" ng-model="data.view" uib-btn-radio="'day'" ng-click="data.view='day'">Day</button> -->
+          </div>
+        </div>
+        <mwl-calendar
+          view="data.view"
+          current-day="data.today"
+          events="data.events"
+          view-title=""
+          on-event-click=""
+          cell-auto-open-disabled="true"
+          on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+          cell-is-open="true"
+          on-timespan-click="data.timespan(calendarDate, calendarCell)">
+        </mwl-calendar>
+      </div>
+    </div>
+  </section>
+</div>

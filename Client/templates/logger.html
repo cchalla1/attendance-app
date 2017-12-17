@@ -1,0 +1,22 @@
+<div class="container" style="padding-top:10%;">
+  <div style="margin-bottom:5%;"><button class="btn btn-default" ng-click="submit()">Submit</button></div>
+  <section>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center custom-card" style="color:white" ng-repeat="employee in employees">
+        {{employee.employee_first_name}} {{employee.employee_last_name}}
+        <span class="custom-controls-stacked">
+          <label class="custom-control custom-radio">
+            <input type="radio" name="attendance-{{employee.employee_id}}" class="custom-control-input" id="late" ng-model="employee.att[0].attendance" value="0">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Late</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input type="radio" name="attendance-{{employee.employee_id}}" class="custom-control-input" id="ontime" ng-model="employee.att[0].attendance" value="1">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">On-Time</span>
+          </label>
+        </span>
+      </li>
+    </ul>
+  </section>
+</div>

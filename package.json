@@ -1,0 +1,20 @@
+{
+  "name": "attendance-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "moment": "^2.19.4",
+    "mongoose": "^4.13.5",
+    "mongoose-auto-increment": "^5.0.1",
+    "underscore": "^1.8.3"
+  },
+  "engines": {
+    "node": "8.1.3"
+  }
+}
