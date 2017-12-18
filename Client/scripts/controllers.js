@@ -65,6 +65,9 @@ angular.module("Controllers", ["mwl.calendar"])
   }
 
   $scope.fetchCalendar = function(view) {
+    if(!$scope.employee.employee_id) {
+      return;
+    }
     if(view) {
       $scope.data.view = view;
     }
