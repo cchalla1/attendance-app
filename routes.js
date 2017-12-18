@@ -11,6 +11,7 @@ router.get("/*", function(req, res, next) {
   if(req.url.includes("api")) {
     next();
   } else {
+    console.log("i am here");
     res.render("index");
   }
 });
