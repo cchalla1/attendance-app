@@ -44,7 +44,7 @@ router.post("/api/getEmployees", function(req, res) {
       if(!clone.att || clone.att.length==0) {
         var attendance = new Attendance({employee:clone._id, employee_id:clone.employee_id, date:req.body.today});
         attendance.save(function(err, att) {
-          Employee.update({employee_id:clone.employee_id}, {$push:{att:att.att_id}}).exec();
+          Employee.update({employee_id:clone.employee_id}, {$push:{att:att._id}}).exec();
         });
       }
       result.push(clone);
