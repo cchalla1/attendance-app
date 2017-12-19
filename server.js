@@ -5,7 +5,7 @@ var express = require("express"),
     app = express();
 
 app.use(express.static(__dirname + '/Client'));
-app.use(express.favicon(path.join(__dirname, '/', 'favicon.ico')));
+//app.use(express.favicon(path.join(__dirname, '/', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '/')));
 app.set('views', __dirname + '/views');
 // app.use(express.static(__dirname + '/views'));
