@@ -1,6 +1,7 @@
 var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
+    path = require('path'),
     app = express();
 
 app.use(express.static(__dirname + '/Client'));
