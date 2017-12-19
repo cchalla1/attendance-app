@@ -54,3 +54,7 @@ input {
 .in {
   display: block;
 }
+
+.event-item span:nth-child(2) {
+  display:none;
+}
