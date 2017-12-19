@@ -40,7 +40,7 @@
               Next
             </button>
           </div>
-          <div class="col col-md-4" style="text-align:center;">{{data.title}}</div>
+          <div class="col col-md-4" style="text-align:center;">{{data.calendarTitle}}</div>
           <div class="col col-md-4 btn-group">
             <button class="btn btn-primary" style="float:right" ng-model="data.view" uib-btn-radio="'year'" ng-click="fetchCalendar('year')">Year</button>
             <button class="btn btn-primary" style="float:right" ng-model="data.view" uib-btn-radio="'month'" ng-click="fetchCalendar('month')">Month</button>
@@ -52,12 +52,12 @@
           view="data.view"
           current-day="data.today"
           events="data.events"
-          view-title=""
+          view-title="data.calendarTitle"
           on-event-click=""
           cell-auto-open-disabled="true"
           on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
           cell-is-open="true"
-          on-timespan-click="data.timespan(calendarDate, calendarCell)">
+          on-timespan-click="">
         </mwl-calendar>
       </div>
     </div>
