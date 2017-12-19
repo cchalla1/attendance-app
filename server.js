@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/Client'));
 //app.set('views', __dirname + '/app/views');
 app.use('/views', express.static(__dirname + '/Views'));
 
-exports.db = mongoose.createConnection('mongodb://heroku_h4wb4tck:ornq8ql31cf3n6885b6ho0g05n@ds159866.mlab.com:59866/heroku_h4wb4tck');
+exports.db = mongoose.createConnection('mongodb://heroku_cn8x6ssd:ams34smgu5v1lhdlh46rplioav@ds155644.mlab.com:55644/heroku_cn8x6ssd');
 exports.autoIncrement = require('mongoose-auto-increment');
 exports.autoIncrement.initialize(exports.db);
 require("./Models/model.js");
