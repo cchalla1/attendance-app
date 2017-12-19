@@ -44,9 +44,7 @@ router.post("/api/getEmployees", function(req, res) {
       if(!clone.att || clone.att.length==0) {
         var attendance = new Attendance({employee:clone._id, employee_id:clone.employee_id, date:req.body.today});
         attendance.save(function(err, att) {
-          console.log("saved", clone);
-          clone.att.push(att._id);
-          Employee.update({employee_id:clone.employee_id}, {$set:{att:clone.att}}).exec();
+          Employee.update({employee_id:clone.employee_id}, {$push:{att:att_id}}).exec();
         });
       }
       result.push(clone);
@@ -80,7 +78,7 @@ router.post("/api/postAttendance", function(req, res) {
   var employees = _.indexBy(req.body.data, "employee_id")
   Attendance.find({employee_id:{$in: Object.keys(employees)}, date:req.body.today}).stream()
     .on("data", function(att) {
-      Attendance.update({employee_id:att.employee_id}, {$set:{attendance:employees[att.employee_id].attendance}}).exec();
+      Attendance.update({employee_id:att.employee_id, date:req.body.today}, {$set:{attendance:employees[att.employee_id].attendance}}).exec();
     })
     .on("error", function(err) {
 
