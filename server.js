@@ -6,9 +6,9 @@ var express = require("express"),
 
 app.use(express.static(__dirname + '/Client'));
 //app.use(express.favicon(path.join(__dirname, '/', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, '/')));
-app.set('views', __dirname + '/app/views');
-// app.use(express.static(__dirname + '/views'));
+//app.use(express.static(path.join(__dirname, '/')));
+//app.set('views', __dirname + '/app/views');
+app.use(express.static(__dirname + '/app/views'));
 
 exports.db = mongoose.createConnection('mongodb://heroku_h4wb4tck:ornq8ql31cf3n6885b6ho0g05n@ds159866.mlab.com:59866/heroku_h4wb4tck');
 exports.autoIncrement = require('mongoose-auto-increment');
