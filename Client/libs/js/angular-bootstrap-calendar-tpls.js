@@ -974,7 +974,7 @@
             },
             controller: 'MwlCalendarMonthCtrl as vm',
             link: function (scope, element, attrs, calendarCtrl) {
-                scope.vm.calendarCtrl = calendarCtrl;
+                //scope.vm.calendarCtrl = calendarCtrl;
             }
         };
     });
