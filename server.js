@@ -12,7 +12,7 @@ exports.autoIncrement.initialize(exports.db);
 require("./Models/model.js");
 var router = require("./routes");
 
-app.engine("html", require("ejs").renderFile);
+app.engine("html", require("ejs").__express);
 app.set("view engine", "html");
 
 app.use(bodyParser.json());
