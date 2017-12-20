@@ -5,6 +5,7 @@ var express = require("express"),
     mongoose = require("mongoose"),
     db = require("./server").db,
     Employee = db.model("Employees"),
+    path = require("path"),
     Attendance = db.model("Attendance");
 
 router.get("/*", function(req, res, next) {
