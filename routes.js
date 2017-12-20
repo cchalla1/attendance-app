@@ -11,7 +11,7 @@ router.get("/*", function(req, res, next) {
   if(req.url.includes("api")) {
     next();
   } else {
-    console.log("i am here", __dirname);
+    console.log("i am here", path.resolve(__dirname, '../Views'));
     res.render("index");
   }
 });
