@@ -1,6 +1,6 @@
 angular.module("attendanceApp", ["ngRoute", "Controllers"])
 .config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+  //$locationProvider.html5Mode(true);
   $routeProvider
     .when("/", {
       templateUrl : "templates/userForm.html",
