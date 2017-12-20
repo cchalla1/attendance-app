@@ -8,7 +8,7 @@ var express = require("express"),
     path = require("path"),
     Attendance = db.model("Attendance");
 
-router.get("/*", function(req, res, next) {
+router.get("/", function(req, res, next) {
   if(req.url.includes("api")) {
     next();
   } else {
