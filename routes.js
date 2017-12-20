@@ -13,7 +13,7 @@ router.get("/*", function(req, res, next) {
     next();
   } else {
     console.log("i am here", path.resolve(__dirname, '../Views'));
-    res.render(path.resolve(__dirname, '../Views/index'));
+    res.render('index');
   }
 });
 
