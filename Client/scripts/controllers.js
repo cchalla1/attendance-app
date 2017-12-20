@@ -2,9 +2,6 @@ angular.module("Controllers", ["mwl.calendar"])
 .controller("FormCtrl", ['$scope', '$http', '$rootScope', '$location', function($scope, $http, $rootScope, $location) {
   $scope.data = {};
   $rootScope.activePage = "form";
-  $rootScope.nextPage = function(page) {
-    $location.path('/'+page);
-  }
 
   $scope.doRegister = function() {
     $http.post("/api/registerEmployee", $scope.data).then(function(response) {
